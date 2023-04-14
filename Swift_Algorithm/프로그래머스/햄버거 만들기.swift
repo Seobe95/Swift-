@@ -1,8 +1,8 @@
-import Foundation
-
 /*
  link ; https://school.programmers.co.kr/learn/courses/30/lessons/133502
  */
+
+import Foundation
 
 func solution (_ ingredient: [Int]) -> Int {
 	var stack = Array<Int>()
