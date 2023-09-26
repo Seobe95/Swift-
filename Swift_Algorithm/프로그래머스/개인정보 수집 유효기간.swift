@@ -25,6 +25,7 @@ func solution(_ today:String, _ terms:[String], _ privacies:[String]) -> [Int] {
       answer.append(index + 1)
     }
   }
+  
   return answer
 }
 
