@@ -13,6 +13,7 @@ import Foundation
 
 func solution(_ keymap:[String], _ targets:[String]) -> [Int] {
   var keyboardArr: [[String : Int]] = []
+  var answer: [Int] = []
   
   let keymap = keymap.map { return Array($0) }
   let targets = targets.map { return Array($0) }
@@ -26,11 +27,9 @@ func solution(_ keymap:[String], _ targets:[String]) -> [Int] {
     }
   }
   
-  var answer: [Int] = []
-  
-  targets.forEach {
+  targets.forEach { targetString in
     var arr: [Int] = []
-    $0.forEach { str in
+    targetString.forEach { str in
       var countArr: [Int] = []
       for index in 0..<keyboardArr.count {
         let count = keyboardArr[index][String(str)] ?? 0
@@ -38,15 +37,9 @@ func solution(_ keymap:[String], _ targets:[String]) -> [Int] {
       }
       arr.append(countArr.isEmpty ? 0 : countArr.min()!)
     }
-    
-    if arr.contains(0) {
-      return answer.append(-1)
-    }
-    
-    answer.append(arr.reduce(0) { $0 + $1 })
+    let result = arr.contains(0) ? -1 : arr.reduce(0) { $0 + $1 }
+    answer.append(result)
   }
+
   return answer
 }
-
-
-solution(["ABCE"], ["ABDE"])

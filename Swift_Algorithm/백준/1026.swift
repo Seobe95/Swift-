@@ -20,7 +20,8 @@ var A: [Int] = readLine()!.split(separator: " ").map { Int($0)! }.sorted { $0 > 
 var B = readLine()!.split(separator: " ").map { Int($0)! }.sorted { $0 < $1 }
 
 for _ in  0..<N {
-  result += A.removeLast() * B.removeLast()
+  result +
+  = A.removeLast() * B.removeLast()
 }
 
 print(result)
